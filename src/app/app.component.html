@@ -1,0 +1,61 @@
+<!-- <h1 [style.color] = 'color'> {{name}} </h1>
+  <input #selector [value] = 'name' (input) = 'name = selector.value' >
+  <input [value] = 'name' (input) = 'name = $event.target.value' >
+  <input [value] = 'name' (keyup) = 'name = $event.target.value' >
+  <input [value] = 'name' (keyup.enter) = 'name = $event.target.value' 
+                          (blur) = 'name = $event.target.value'
+  >
+  <input [(ngModel)] = 'name' >
+  <select (change) = 'changeColor($event.target.value)'>
+    <option>blue </option>
+    <option>Red </option>
+    <option>Green </option>
+  </select> 
+  -->
+  <div>
+    <ul>
+      <li *ngFor = 'let cust of customers'
+          (click) = 'updateCustInfo(cust)'
+      >{{ cust.name }}</li>
+    </ul>
+  </div>
+
+  <div class="checkbox" >
+    <label>
+      <input type="checkbox" (change)='hideshow()'> Check me out
+    </label>
+  </div>
+  <button (click)="hideshow()" class="btn btn-default">Show/Hide</button>
+  <div class="col-sm-6" [hidden] = 'displayVal' *ngIf="showaddress">
+
+    
+    <form *ngIf = "hideshowform">
+      <div class="form-group">
+        <label for="username">Name</label>
+        <input [(ngModel)] = 'cust.name' type="text" [ngModelOptions]="{standalone: true}" id="username" placeholder="Name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input [(ngModel)]= 'cust.email' [ngModelOptions]="{standalone: true}" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Number</label>
+        <input type="cust.number" [(ngModel)]= 'number' [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputPassword1" placeholder="Number">
+      </div>
+      <div class="form-group">
+        <label>Address</label><br>
+        <label for="">Street</label><input [(ngModel)]= 'cust.address.street' [ngModelOptions]="{standalone: true}" type="text"><br>
+        <label for="">city</label><input [(ngModel)]= 'cust.address.city' [ngModelOptions]="{standalone: true}" type="text"><br>
+        <label for="">State</label><input [(ngModel)]= 'cust.address.state' [ngModelOptions]="{standalone: true}" type="text"><br>
+
+
+        <p class="help-block">Example block-level help text here.</p>
+      </div>
+      
+    </form>
+  
+   <!-- <app-detailedaddress [states] = 'states' (customerdetail) = 'getInfo($event)'></app-detailedaddress> -->
+  <app-detailedaddress #detailaddress   ></app-detailedaddress>
+  <!-- <p>{{detailaddress.testfun()}}</p> -->
+  <button (click)= "getinfo()" >toastr</button>
+</div>

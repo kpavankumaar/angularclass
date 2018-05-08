@@ -1,0 +1,20 @@
+<div class='well'>
+  <!-- <label>Name:{{name}} </label>
+  <br>
+  <label>Email:{{email}} </label>
+  <br>
+  <label>Number:{{number}} </label>
+  <br>
+  <label>Street:{{address.street}} </label>
+  <br>
+  <label>city:{{address.city}} </label> -->
+  <br>
+  <select>
+    <option *ngFor='let state of states'> {{state}} </option>
+    
+  </select>
+  <button (click)='run()'>clickme</button>
+  <p>{{detailaddress.testfun()}}</p>
+  <br>
+
+</div>
